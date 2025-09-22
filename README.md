@@ -9,4 +9,6 @@ run sudo go run usr/loader.go
 
 ## 3- Hit it with curl 
 curl localhost:4040 it won't bind as port is blocked.
-curl localhost:XYZD it'll bind
+
+
+curl localhost:XYZD it'll bind.
