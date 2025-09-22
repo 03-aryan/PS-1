@@ -1,0 +1,9 @@
+1- The code implements a worker pool where multiple goroutines execute functions sent through a channel. It adds a task to print "HERE1" while the main goroutine prints "Hello".
+
+2- The make(chan func(), 10) creates a buffered channel that can hold functions as tasks. The go func() { for f := range cnp { f() } }() starts a worker goroutine that executes functions from the channel.
+
+3- The for loop with 4 iterations starts four workers so tasks can be processed concurrently. This allows multiple functions to run in parallel, improving throughput.
+
+4- The buffered channel acts as a task queue, storing functions until workers pick them up. Buffering prevents the sender from blocking if workers are not ready immediately.
+
+5- "HERE1" is not printed because the main goroutine exits before the worker can pick up and execute the task. When main finishes, all running goroutines are terminated, so the task never runs.

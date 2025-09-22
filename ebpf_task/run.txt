@@ -1,0 +1,2 @@
+run clang -O2 -g -target bpf -c src/drop_port.c -o drop_port.o 
+run sudo go run usr/loader.go 
